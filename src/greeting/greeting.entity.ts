@@ -1,7 +1,8 @@
 import {Column, Entity, PrimaryGeneratedColumn} from "typeorm";
+import {GreetingInterface} from "../../client/src/greeting/GreetingInterface";
 
 @Entity()
-export class Greeting {
+export class Greeting implements GreetingInterface {
   @PrimaryGeneratedColumn()
   id: number;
 
