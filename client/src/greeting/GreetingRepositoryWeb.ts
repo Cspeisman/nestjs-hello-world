@@ -3,7 +3,7 @@ import {GreetingInterface} from "./GreetingInterface";
 
 export class GreetingRepositoryWeb implements GreetingRepository {
   async findAll(): Promise<GreetingInterface[]> {
-    const response = await fetch('http://localhost:8080');
+    const response = await fetch('/');
     return await response.json();
   }
 }
