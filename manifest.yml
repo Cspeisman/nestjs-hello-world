@@ -1,0 +1,5 @@
+---
+applications:
+- name: my-nestjs-app
+  command: node dist/src/main.js
+  buildpack: https://github.com/cloudfoundry/nodejs-buildpack

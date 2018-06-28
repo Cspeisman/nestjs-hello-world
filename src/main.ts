@@ -1,8 +1,15 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { renderFile } from 'ejs';
-
 import {join} from 'path';
+
+const filterApiRequests = (req, res, next) => {
+  if (req.url.includes('api')) {
+    next();
+  } else {
+    res.sendFile(join(__dirname, '../client/build/index.html'));
+  }
+};
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
@@ -14,14 +21,8 @@ async function bootstrap() {
       redirect: false,
   });
 
-  app.use((req, res, next) => {
-    if (req.url !== '/') {
-      res.sendFile(join(__dirname, '../client/build/index.html'));
-    } else {
-      next();
-    }
-  });
+  app.use(filterApiRequests);
 
-  await app.listen(process.env.PORT || 3000);
+  await app.listen(process.env.PORT || 8080);
 }
 bootstrap();

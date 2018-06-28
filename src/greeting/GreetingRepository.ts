@@ -1,5 +1,5 @@
-import {Greeting} from "./greeting.entity";
+import {Greeting} from './greeting.entity';
 
 export interface GreetingRepository {
-  findAll(): Promise<Greeting[]>
+  findAll(): Promise<Greeting[]>;
 }

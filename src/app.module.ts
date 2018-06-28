@@ -1,21 +1,21 @@
 import {Module} from '@nestjs/common';
-import {TypeOrmModule} from "@nestjs/typeorm";
-import {Connection} from "typeorm";
-import {GreetingModule} from "./greeting/greeting.module";
+import {TypeOrmModule} from '@nestjs/typeorm';
+import {GreetingModule} from './greeting/greeting.module';
+import {Connection} from 'typeorm';
 
 @Module({
   imports: [
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host:  'localhost',
+      host:  `${process.env.DB_HOST}`,
       port: 5432,
-      username: 'cspeisman',
-      password: '',
-      database: 'test',
+      username: `${process.env.DB_USERNAME}`,
+      password: `${process.env.DB_PW}`,
+      database: `${process.env.DB_NAME}`,
       entities: [__dirname + '*/**/*.entity{.ts,.js}'],
-      synchronize: true
+      synchronize: true,
     }),
-    GreetingModule
+    GreetingModule,
   ],
   controllers: [],
   providers: [],
