@@ -27,9 +27,7 @@
       false
     ],
     "curly": false,
-    "interface-name": [
-      false
-    ],
+    "interface-name": [true, "never-prefix"],
     "array-type": [
       false
     ],
@@ -49,8 +47,7 @@
     ],
     "one-variable-per-declaration": [
       false
-    ],
-    "interface-name": [true, "never-prefix"]
+    ]
   },
   "rulesDirectory": []
 }

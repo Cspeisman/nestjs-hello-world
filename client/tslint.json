@@ -9,6 +9,7 @@
   "rules": {
     "interface-name": [false, "always-prefix"],
     "member-access": false,
-    "ordered-imports": false
+    "ordered-imports": false,
+    "quotemark": [true, "single"]
   }
 }

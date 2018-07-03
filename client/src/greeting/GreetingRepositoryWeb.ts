@@ -1,5 +1,5 @@
-import {GreetingRepository} from "../../../src/greeting/GreetingRepository";
-import {GreetingInterface} from "./GreetingInterface";
+import {GreetingInterface} from './GreetingInterface';
+import { GreetingRepository } from '../../../src/greeting/GreetingRepository';
 
 export class GreetingRepositoryWeb implements GreetingRepository {
   async findAll(): Promise<GreetingInterface[]> {
